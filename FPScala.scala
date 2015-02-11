@@ -34,8 +34,8 @@ object FPScala {
   }
 
   // 2.4
-  def uncurrying[A,B,C](f: A => B => C): (A,B) = {
-    (a,b) => f(a)(b)
+  def uncurrying[A,B,C](f: A => B => C): (A,B) => C = {
+    (a, b) => f(a)(b)
   }
 
   // 2.5 
