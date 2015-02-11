@@ -74,4 +74,10 @@ object FPScala {
     case that it matches which would be:
       case Cons(x, Cons(y, Cons(3, Cons(4, _)))) => x + y
   */
+
+  // 3.2
+  // 3.3
+  // 3.4
+  // 3.5
+  /* In List.scala */
 }
