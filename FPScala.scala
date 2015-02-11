@@ -32,4 +32,9 @@ object FPScala {
   def currying[A,B,C](f: (A,B) => C): A => (B => C) = {
     (a: A) => (b: B) => f(a,b)
   }
+
+  // 2.4
+  def uncurrying[A,B,C](f: A => B => C): (A,B) = {
+    (a,b) => f(a)(b)
+  }
 }
