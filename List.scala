@@ -1,5 +1,3 @@
-package learnscala
-
 sealed trait List[+A]
 case object Nil extends List[Nothing]
 case class Cons[+A](head: A, tail : List[A]) extends List[A]
@@ -31,5 +29,15 @@ object List {
   def setHead[A](l: List[A], newH: A): List[A] = l match {
     case Nil => Nil
     case Cons(_, t) => Cons(newH, t) 
+  }
+
+  // 3.4
+  def drop[A](l: List[A], n: Int): List[A] = {
+    @annotation.tailrec
+    def go(cur: Int, as: List[A]): List[A] = {
+      if (cur == n) as
+      else go(cur + 1, tail(as))
+    }
+    go(0, l)
   }
 }
